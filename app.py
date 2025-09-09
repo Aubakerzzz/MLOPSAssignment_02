@@ -58,7 +58,7 @@ def hello():
 
 # ✅ New route for Azure deployment test
 @app.route("/home")
-def hello():
+def home():
     return "Home from Azure!"
 
 
