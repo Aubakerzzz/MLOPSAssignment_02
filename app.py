@@ -45,5 +45,11 @@ def logout():
 def about():
     return render_template("about.html")
 
+# ✅ New route for Azure deployment test
+@app.route("/hello")
+def hello():
+    return "Hello from Azure!"
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True)
+    # For Azure, listen on all interfaces & port 8000 (can be overridden by Azure)
+    app.run(host="0.0.0.0", port=8000, debug=True)
