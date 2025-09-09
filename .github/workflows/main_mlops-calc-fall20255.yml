@@ -37,11 +37,10 @@ jobs:
       - name: Deploy to Azure Web App for Containers
         run: |
           az webapp config container set \
-            --name mlops-calc-fall20254 \
+            --name ml \
             --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
             --docker-custom-image-name ${{ secrets.DOCKER_USERNAME }}/mlops-app:latest \
             --docker-registry-server-url https://index.docker.io/v1/ \
             --docker-registry-server-user ${{ secrets.DOCKER_USERNAME }} \
             --docker-registry-server-password ${{ secrets.DOCKER_PASSWORD }}
 
-            

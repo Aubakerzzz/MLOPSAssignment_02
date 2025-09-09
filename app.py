@@ -60,3 +60,10 @@ def hello():
 @app.route("/home")
 def home_azure():
     return "Home from Azure!"
+
+
+
+
+if __name__ == "__main__":
+    # For Azure, listen on all interfaces & port 8000 (can be overridden by Azure)
+    app.run(host="0.0.0.0", port=8000, debug=True)
