@@ -7,11 +7,13 @@ app.secret_key = "your_secret_key"  # Required for sessions & flash messages
 USERNAME = "admin"
 PASSWORD = "password123"
 
+
 @app.route("/")
 def home():
     if "user" in session:
         return redirect(url_for("welcome"))
     return redirect(url_for("login"))
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -28,6 +30,7 @@ def login():
 
     return render_template("login.html")
 
+
 @app.route("/welcome")
 def welcome():
     if "user" not in session:
@@ -35,15 +38,18 @@ def welcome():
         return redirect(url_for("login"))
     return render_template("welcome.html", user=session["user"])
 
+
 @app.route("/logout")
 def logout():
     session.pop("user", None)
     flash("You have been logged out.", "info")
     return redirect(url_for("login"))
 
+
 @app.route("/about")
 def about():
     return render_template("about.html")
+
 
 # ✅ New route for Azure deployment test
 @app.route("/hello")
