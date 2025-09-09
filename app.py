@@ -60,11 +60,3 @@ def hello():
 @app.route("/home")
 def home_azure():
     return "Home from Azure!"
-
-
-
-
-if __name__ == "__main__":
-    import os
-    PORT = int(os.environ.get("PORT", 8000))
-    app.run(host="0.0.0.0", port=PORT)

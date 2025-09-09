@@ -10,4 +10,5 @@ COPY . .
 EXPOSE 8000
 
 # Use gunicorn for production
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
+CMD ["sh", "-c", "gunicorn -b 0.0.0.0:$PORT app:app"]
+
