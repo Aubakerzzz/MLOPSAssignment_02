@@ -48,7 +48,7 @@ def about():
 # ✅ New route for Azure deployment test
 @app.route("/hello")
 def hello():
-    return "Hello from Azure!
+    return "Hello from Azure!"
 
 
 if __name__ == "__main__":
